@@ -5,7 +5,7 @@ import os
 import sys
 import time
 from pathlib import Path
-from .store import Store
+from .postgres import open_store as Store
 from .network import Client
 from .adapters import collect
 

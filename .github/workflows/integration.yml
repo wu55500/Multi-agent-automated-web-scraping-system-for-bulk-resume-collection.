@@ -1,0 +1,40 @@
+name: Runtime integration
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: dztest
+          POSTGRES_PASSWORD: ephemeral-test-only
+          POSTGRES_DB: dztest
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dztest -d dztest"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install 'psycopg[binary]>=3.2,<4'
+      - run: python -m unittest discover -s integration -p test_postgres.py
+        env:
+          DZ_TEST_POSTGRES_URL: postgresql://dztest:ephemeral-test-only@localhost:5432/dztest
+  chromium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install 'playwright>=1.48,<2'
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m unittest discover -s integration -p test_browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chromium-mobile-screenshot
+          path: browser-mobile.png

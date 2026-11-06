@@ -5,7 +5,7 @@ import os
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
-from .store import Store
+from .postgres import open_store as Store
 
 
 def load_tokens(path):
