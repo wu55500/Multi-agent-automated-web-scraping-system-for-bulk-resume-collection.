@@ -74,3 +74,12 @@ python3 -m dz.cli platform migrate-legacy --db dz.db --consent owned-export
 只读旧库，批次事务、唯一版本、可重跑补齐后续记录；不把学历门槛迁为合规违法记录。旧版 `迁移数据.py` 改为新 CLI 入口。PG 历史 DDL 的岗位主键类型已修正，但**没有 PG 实例验证，也没有将新运行时替换为 PostgreSQL**。容器配置见 `deploy/`；本环境没有 Docker，未做容器运行验收。
 
 验收与缺口：[docs/DELIVERY_V5.md](docs/DELIVERY_V5.md)。旧设计和验收文档只作历史参考，不能覆盖本文件的实际状态。
+
+## V6 delivery / V6 交付
+
+- [English delivery and gap register](docs/DELIVERY_V6.en.md)
+- [中文交付与缺口登记表](docs/DELIVERY_V6.zh-CN.md)
+- [Operational verification / 运行核验](docs/OPERATIONS_V6.md)
+- [Staging dashboard / 测试环境看板](https://job-platform-staging.up.railway.app/)
+
+Retrieve `DZ_ACCESS_TOKEN` from Railway → job-platform → Variables to sign in. / 在 Railway → job-platform → Variables 中显示并复制 `DZ_ACCESS_TOKEN` 后登录。

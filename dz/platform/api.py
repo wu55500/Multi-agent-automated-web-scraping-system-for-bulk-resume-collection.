@@ -88,6 +88,12 @@ def serve(root,host,port):
             raise ValueError('invalid DZ_TOKEN_JSON')
     else:
         tokens=load_tokens(os.environ['DZ_TOKEN_FILE'])
+    # Refuse readiness until configured tenant stores can initialize and respond.
+    for tenant in {r['tenant'] for r in tokens}:
+        database=Store(root,tenant)
+        try: database.rows('SELECT 1')
+        finally: database.close()
+    print('Tenant database initialization passed.',flush=True)
     server=ThreadingHTTPServer((host,port),handler(root,tokens))
     print('Open http://%s:%s; use TLS reverse proxy for remote access.'%(host,port),flush=True)
     try: server.serve_forever()
