@@ -1,0 +1,24 @@
+{"source":"paste","title":"数据分析师","company":"某零售集团","city":"上海","size":"","raw":"数据分析师（经营分析）\n岗位职责：负责经营指标体系建设。\n任职要求：\n1. 熟悉 SQL 与 Hive，能独立写窗口函数；\n2. 熟练使用 Excel 数据透视表；\n3. 掌握 Python 与 Pandas 做数据清洗；\n4. 了解 A/B 实验与假设检验。"}
+{"source":"paste","title":"数据分析师","company":"杭州数聚科技","city":"杭州","size":"","raw":"数据分析师\n任职要求：\n1. 熟练 SQL，会多表关联；\n2. 熟悉 Python 与 Pandas；\n3. 有 Tableau 或 Power BI 看板经验；\n4. 熟悉 Excel。"}
+{"source":"paste","title":"数据采集工程师","company":"杭州云爬网络","city":"杭州","size":"","raw":"数据采集工程师\n任职要求：\n1. 熟悉 Python，能用 requests、httpx 写采集任务；\n2. 了解 XPath 与页面结构分析；\n3. 了解 Playwright 做浏览器自动化；\n4. 熟悉 MySQL，会建表与去重；\n5. 会用 Git 协作。"}
+{"source":"paste","title":"前端开发工程师","company":"独立工具团队","city":"远程","size":"小厂","raw":"前端开发工程师\n我们在做一个 AI 笔记工具（团队 8 人）。\n任职要求：\n1. 精通 JavaScript 与 ES6；\n2. 熟练使用 Vue3；\n3. 熟悉 HTML/CSS，能手写响应式布局；\n4. 了解 HTTP 接口与 RESTful 设计。"}
+{"source":"paste","title":"机器学习工程师","company":"京东科技","city":"北京","size":"","raw":"机器学习工程师\n任职要求：\n1. 熟悉 Python、Pandas，能独立做特征工程；\n2. 熟练使用 sklearn，了解 XGBoost 与逻辑回归；\n3. 掌握统计基础与假设检验；\n4. 有 PyTorch 经验优先。"}
+{"source":"paste","title":"AI 应用工程师","company":"字节跳动","city":"北京","size":"","raw":"AI 应用工程师（Agent 方向）\n岗位职责：负责内部 Agent 平台的能力建设。\n任职要求：\n1. 熟悉 LLM 应用开发，有 Agent 或多智能体项目经验；\n2. 熟悉 RAG 检索增强与 Prompt 工程；\n3. 熟悉 Python，能用 FastAPI 写服务；\n4. 了解向量库与 MySQL。"}
+{"source":"paste","title":"Agent 平台工程师","company":"腾讯","city":"深圳","size":"","raw":"Agent 平台工程师\n任职要求：\n1. 熟悉大模型 function calling 与 MCP 协议；\n2. 有 Agent 编排框架（LangChain 或自研）经验；\n3. 熟悉 Python 与 Docker；\n4. 熟悉 MySQL 与 Redis。"}
+{"source":"paste","title":"Python 后端开发","company":"上海某某信息技术","city":"上海","size":"","raw":"Python 后端开发\n任职要求：\n1. 熟悉 Python，掌握 FastAPI 或 Django；\n2. 熟悉 MySQL，会写复杂 SQL；\n3. 了解 Docker 部署；\n4. 会用 Git 协作。"}
+{"source":"paste","title":"数据开发工程师","company":"成都数据港","city":"成都","size":"","raw":"数据开发工程师\n任职要求：\n1. 熟练 SQL 与 Hive，能写窗口函数；\n2. 熟悉 Python 做数据清洗；\n3. 了解 Airflow 调度与 Git。"}
+{"source":"paste","title":"商业分析师","company":"美团","city":"上海","size":"","raw":"商业分析师\n任职要求：\n1. 精通 Excel 与 SQL；\n2. 掌握 A/B 实验设计与假设检验；\n3. 熟悉 Python 与 Pandas；\n4. 有 Tableau 看板经验。"}
+{"source":"paste","title":"BI 工程师","company":"广州云图软件","city":"广州","size":"","raw":"BI 工程师\n任职要求：\n1. 熟练 SQL，会建模；\n2. 精通 Tableau 或 Power BI；\n3. 熟悉 Excel 数据透视；\n4. 了解 Python。"}
+{"source":"paste","title":"推荐算法工程师","company":"快手","city":"北京","size":"","raw":"推荐算法工程师\n任职要求：\n1. 熟悉 Python 与 PyTorch；\n2. 掌握机器学习与深度学习；\n3. 熟悉 A/B 实验与指标分析；\n4. 了解 SQL。"}
+{"source":"paste","title":"爬虫工程师","company":"深圳小爬工作室","city":"深圳","size":"小厂","raw":"爬虫工程师\n任职要求：\n1. 熟悉 Python、scrapy、XPath；\n2. 熟悉 MySQL；\n3. 了解 Playwright；\n4. 能接受节奏快、一个人负责全流程。"}
+{"source":"paste","title":"自动化测试工程师","company":"杭州某某网络","city":"杭州","size":"","raw":"自动化测试工程师\n任职要求：\n1. 熟悉 Playwright 或 Selenium；\n2. 熟悉 Python；\n3. 了解 HTTP 接口测试；\n4. 会用 Git。"}
+{"source":"paste","title":"RPA 实施顾问","company":"上海某咨询","city":"上海","size":"小厂","raw":"RPA 实施顾问\n任职要求：\n1. 熟悉 RPA 工具（影刀或 UiPath）；\n2. 熟悉 Excel 与业务流程梳理；\n3. 会用 Python 写脚本加分；\n4. 沟通能力强。"}
+{"source":"paste","title":"数据分析师（增长）","company":"北京某科技","city":"北京","size":"中厂","raw":"数据分析师（增长）\n任职要求：\n1. 熟练 SQL；\n2. 熟悉 A/B 实验与假设检验；\n3. 熟悉 Python 与 Pandas；\n4. 熟悉 Excel。"}
+{"source":"paste","title":"LLM 应用工程师","company":"杭州某大模型公司","city":"杭州","size":"中厂","raw":"LLM 应用工程师\n任职要求：\n1. 熟悉大模型 API 与 Prompt 工程；\n2. 有 RAG 与 Agent 落地经验；\n3. 熟悉 Python、FastAPI；\n4. 了解向量检索与 MySQL。"}
+{"source":"paste","title":"数据运营","company":"成都某电商","city":"成都","size":"小厂","raw":"数据运营\n任职要求：\n1. 熟练 Excel，会数据透视；\n2. 会写基础 SQL；\n3. 有看板搭建经验加分。"}
+{"source":"paste","title":"前端开发","company":"上海某信息","city":"上海","size":"","raw":"前端开发工程师\n任职要求：\n1. 熟悉 JavaScript/ES6；\n2. 熟悉 React 或 Vue；\n3. 熟悉 HTML/CSS；\n4. 了解 HTTP。"}
+{"source":"paste","title":"数据仓库工程师","company":"阿里巴巴","city":"深圳","size":"","raw":"数据仓库工程师\n任职要求：\n1. 精通 SQL 与 Hive；\n2. 熟悉 Python；\n3. 了解 Kafka 与数据建模；\n4. 熟悉 Linux。"}
+{"source":"paste","title":"NLP 算法工程师","company":"上海某金融科技","city":"上海","size":"中厂","raw":"NLP 算法工程师\n任职要求：\n1. 熟悉 PyTorch 与 Transformer；\n2. 有 LLM 微调经验优先；\n3. 熟悉 Python 与 Pandas；\n4. 掌握统计基础。"}
+{"source":"paste","title":"Python 开发","company":"远程小团队","city":"远程","size":"小厂","raw":"Python 开发（远程）\n任职要求：\n1. 熟悉 Python；\n2. 了解 requests/httpx 与 SQL；\n3. 会用 Git；\n4. 能独立排期。"}
+{"source":"paste","title":"数据产品经理","company":"百度","city":"北京","size":"","raw":"数据产品经理\n任职要求：\n1. 熟悉 SQL，能自己取数；\n2. 有产品思维与需求分析经验；\n3. 了解 A/B 实验；\n4. 沟通与跨部门协作能力强。"}
+{"source":"paste","title":"增长分析师","company":"广州某电商","city":"广州","size":"中厂","raw":"增长分析师\n任职要求：\n1. 熟练 SQL 与 Excel；\n2. 熟悉 A/B 实验设计与显著性检验；\n3. 熟悉 Python 与 Pandas；\n4. 有 Tableau 经验加分。"}

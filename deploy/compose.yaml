@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports: ["127.0.0.1:8771:8771"]
+    environment:
+      DZ_TOKEN_FILE: /run/secrets/tokens
+    secrets: [tokens]
+    volumes: ["state:/state"]
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+secrets:
+  tokens:
+    file: ../var/tokens.json
+volumes:
+  state:
