@@ -40,7 +40,7 @@ def ddl():
     body=body.replace('INTEGER PRIMARY KEY','BIGSERIAL PRIMARY KEY').replace(' REAL',' DOUBLE PRECISION')
     body+='''
 CREATE OR REPLACE VIEW ods_crawl_health AS
- SELECT (to_timestamp(ts) AT TIME ZONE 'UTC')::date day,source,count(*) requests,
+ SELECT (to_timestamp(ts) AT TIME ZONE 'UTC')::date AS day,source,count(*) requests,
  count(*) FILTER (WHERE status BETWEEN 200 AND 299 AND kind='ok') success,
  count(*) FILTER (WHERE status=429) rate_limited,
  count(*) FILTER (WHERE kind='captcha') captcha_cnt,

@@ -29,6 +29,8 @@ def handler(root,tokens):
         def do_POST(self): self.dispatch(True)
         def dispatch(self,write):
             path=urlsplit(self.path).path
+            if not write and path=='/healthz':
+                self.respond(200,{'status':'alive'}); return
             if not write and path=='/':
                 body=Path(__file__).with_name('dashboard.html').read_bytes()
                 self.send_response(200); self.send_header('Content-Type','text/html; charset=utf-8')
@@ -76,7 +78,16 @@ def handler(root,tokens):
 
 
 def serve(root,host,port):
-    tokens=load_tokens(os.environ['DZ_TOKEN_FILE'])
+    if os.environ.get('DZ_ACCESS_TOKEN'):
+        secret=os.environ['DZ_ACCESS_TOKEN']
+        if len(secret)<32: raise ValueError('DZ_ACCESS_TOKEN must contain at least 32 characters')
+        tokens=[{'sha256':hashlib.sha256(secret.encode()).hexdigest(),'tenant':'personal','role':'operator'}]
+    elif os.environ.get('DZ_TOKEN_JSON'):
+        tokens=json.loads(os.environ['DZ_TOKEN_JSON'])
+        if not isinstance(tokens,list) or not tokens or any(r.get('role') not in ('reader','operator') or len(r.get('sha256',''))!=64 for r in tokens):
+            raise ValueError('invalid DZ_TOKEN_JSON')
+    else:
+        tokens=load_tokens(os.environ['DZ_TOKEN_FILE'])
     server=ThreadingHTTPServer((host,port),handler(root,tokens))
     print('Open http://%s:%s; use TLS reverse proxy for remote access.'%(host,port),flush=True)
     try: server.serve_forever()

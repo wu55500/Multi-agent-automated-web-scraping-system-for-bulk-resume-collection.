@@ -1,4 +1,7 @@
 *
 !dz
 !dz/**
+!requirements-postgres.txt
+!deploy
+!deploy/railway-start.sh
 **/__pycache__

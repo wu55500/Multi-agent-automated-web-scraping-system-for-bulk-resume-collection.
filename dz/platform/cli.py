@@ -36,6 +36,9 @@ def main(argv=None):
     a=sub.add_parser('reply'); a.add_argument('--message',required=True); a.add_argument('--facts',required=True)
     a=sub.add_parser('drift'); a.add_argument('--days',type=int,default=7); a.add_argument('--source',default=''); a.add_argument('--city',default='')
     a=sub.add_parser('calendar'); a.add_argument('--title',required=True); a.add_argument('--start',required=True); a.add_argument('--end',required=True); a.add_argument('--out',required=True)
+    a=sub.add_parser('models-analyze'); a.add_argument('posting'); a.add_argument('--config',required=True)
+    a=sub.add_parser('generate-project'); a.add_argument('--requirements',required=True); a.add_argument('--config',required=True); a.add_argument('--out',required=True)
+    a=sub.add_parser('benchmark'); a.add_argument('--sample',required=True)
     a=p.parse_args(argv)
     if a.cmd=='serve':
         from .api import serve
@@ -96,6 +99,15 @@ def main(argv=None):
             from .calendar import invitation
             Path(a.out).write_text(invitation(a.title,a.start,a.end),encoding='utf-8')
             result={'file':a.out,'sent':False}
+        elif a.cmd=='models-analyze':
+            from .models import Models,analyze_models
+            result=analyze_models(store,a.posting,Models(json.loads(Path(a.config).read_text())))
+        elif a.cmd=='generate-project':
+            from .models import Models,generate_project
+            result=generate_project(Models(json.loads(Path(a.config).read_text())),Path(a.requirements).read_text(),a.out)
+        elif a.cmd=='benchmark':
+            from .benchmark import evaluate_sample
+            result=evaluate_sample(store,json.loads(Path(a.sample).read_text()))
         print(json.dumps(result,ensure_ascii=False,indent=2)); ok=True; return 0
     except (ValueError,PermissionError,OSError) as e:
         print(json.dumps({'ok':False,'error':str(e)},ensure_ascii=False),file=sys.stderr); return 1

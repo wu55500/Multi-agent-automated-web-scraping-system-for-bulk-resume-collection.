@@ -1,0 +1,5 @@
+{
+  "analyst": {"base":"https://YOUR_PROVIDER/v1","model":"YOUR_ANALYST_MODEL","key_env":"DZ_ANALYST_KEY"},
+  "reviewer": {"base":"https://YOUR_PROVIDER/v1","model":"YOUR_REVIEWER_MODEL","key_env":"DZ_REVIEWER_KEY"},
+  "builder": {"base":"https://YOUR_PROVIDER/v1","model":"YOUR_BUILDER_MODEL","key_env":"DZ_BUILDER_KEY"}
+}
