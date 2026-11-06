@@ -28,6 +28,7 @@ class Connection:
         if ignore: query=query.replace('INSERT OR IGNORE INTO ','INSERT INTO ',1)+' ON CONFLICT DO NOTHING'
         query=query.replace('interval=max(interval,?)','interval=GREATEST(interval,?)')
         # Queries are internal constants; parameters are never interpolated as SQL.
+        query=query.replace('used=used+excluded.used','used=usage_daily.used+excluded.used')
         query=query.replace('?', '%s')
         return self.conn.execute(query,params)
     def close(self): self.conn.close()
