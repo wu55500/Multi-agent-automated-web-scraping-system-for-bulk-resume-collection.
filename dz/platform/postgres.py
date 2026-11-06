@@ -36,6 +36,7 @@ class Connection:
 def ddl():
     body=DDL[:DDL.index('CREATE VIEW IF NOT EXISTS ods_crawl_health')]
     body=re.sub(r'CREATE TRIGGER IF NOT EXISTS .*?END;', '',body,flags=re.S)
+    body=body.replace('end INTEGER', '"end" INTEGER')
     body=body.replace('INTEGER PRIMARY KEY','BIGSERIAL PRIMARY KEY').replace(' REAL',' DOUBLE PRECISION')
     body+='''
 CREATE OR REPLACE VIEW ods_crawl_health AS

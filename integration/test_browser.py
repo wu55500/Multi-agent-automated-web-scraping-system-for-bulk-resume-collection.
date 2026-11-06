@@ -1,7 +1,7 @@
 """Real Chromium UI + rendered JobPosting fixture; never contacts employers."""
 import hashlib,json,tempfile,threading,unittest
 from http.server import ThreadingHTTPServer
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 from dz.platform.api import handler
 from dz.platform.store import Store
 from dz.platform.network import Client
@@ -21,8 +21,8 @@ class BrowserTests(unittest.TestCase):
                     browser=p.chromium.launch();page=browser.new_page(viewport={'width':390,'height':844})
                     errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
                     page.goto('http://127.0.0.1:'+str(server.server_port))
-                    page.fill('#token',token);page.click('#load');page.wait_for_function("document.querySelector('#output').textContent.includes('Python demo')")
-                    page.click('[data-tab="audit"]');page.wait_for_function("document.querySelector('#output').textContent.includes('true')")
+                    page.fill('#token',token);page.click('#load');expect(page.locator("#output")).to_contain_text("Python demo")
+                    page.click('[data-tab="audit"]');expect(page.locator("#output")).to_contain_text("true")
                     self.assertEqual(errors,[])
                     self.assertLessEqual(page.evaluate('document.documentElement.scrollWidth'),390)
                     page.screenshot(path='browser-mobile.png',full_page=True);browser.close()
