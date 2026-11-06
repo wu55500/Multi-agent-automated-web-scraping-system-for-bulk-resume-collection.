@@ -25,3 +25,11 @@ Project / 项目: https://railway.com/project/8c4f9dae-09c3-4314-ab59-d808f9f5bf
 Staging is not a certified production service. No load/SLA test, backup restore drill, real ATS submission or funded model call has been performed. Running Railway resources can consume the account's existing allowance; no plan upgrade was purchased. / 测试环境不是经过认证的生产服务。尚未执行负载/SLA 测试、备份恢复演练、真实 ATS 投递或有余额的模型调用。Railway 运行资源可能消耗账号现有额度；未购买套餐升级。
 
 Model credentials, approved target-platform access and representative coverage data remain external dependencies; see the bilingual gap register. / 模型凭据、已批准的目标平台访问权限及代表性覆盖率数据仍是外部依赖，详见双语缺口登记表。
+
+## Final deployment / 最终部署
+
+Pinned application commit / 固定应用提交: `4b15ca7fe11e2a367a5b34ecab88c25488903a5a`.
+Railway deployment / Railway 部署: `a4eacf57-c8a1-4313-97e4-aa7865197f1a`, **SUCCESS**.
+Runtime log / 运行日志: `Tenant database initialization passed.` — actual Railway PostgreSQL 18 schema initialization and SELECT 1 succeeded before HTTP startup. / 真实 Railway PostgreSQL 18 的 schema 初始化和 SELECT 1 在 HTTP 启动前执行成功。
+
+The service is pinned: future GitHub pushes do not automatically change the running revision; reconnect its source to a verified commit for release. / 服务已固定提交版本：后续 GitHub push 不会自动更换运行版本，发布时应将来源重新连接到已核验的提交。
